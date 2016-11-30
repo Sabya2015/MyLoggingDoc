@@ -1,0 +1,2 @@
+# MyLoggingDoc
+ToRenderDoc
