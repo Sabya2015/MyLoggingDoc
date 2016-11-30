@@ -13,7 +13,7 @@ Image
 ## *TR Logging Extensions (Example) – HowTo Steps*
 1. Register the application in the Software Module Registry
     * Pre-requisite: sp-applicationUniqueId – Asset Insight Unique ID
-    * More info : [Software Module Registration](https://git.sami.int.thomsonreuters.com/TR-Enterprise-    Logging/SoftwareModuleRegistry/blob/master/README.md)
+    * More info : [Software Module Registration]()
 2. Include necessary internal TR Enterprise Logging and third-party libraries in the application build path
 3. Application logging configuration: set up TR Enterprise Logging Kafka  appender (e.g. EnterpriseKafkaLog4jAppender) and JSON event layout (e.g. Log4jJsonEventLayout)
 4. Add the necessary JVM parameters to the application’s startup 
