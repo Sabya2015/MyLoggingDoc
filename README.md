@@ -22,9 +22,9 @@ Image
 
 
 
+#### Include internal TR Enterprise Logging and third-party libraries in the application build (Example - step 2)
 
-
-## *Dependencies (Gradle Format)*
+### *Dependencies (Gradle Format)*
 
 #### Internal Libraries
     - compile 'com.trgr.cobalt.infrastructure.ServiceRegistry:ServiceRegistry:34.0.4'
