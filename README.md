@@ -38,14 +38,15 @@ Image
     - compile 'org.apache.kafka:kafka-clients:0.8.2.1'
     - compile 'org.scala-lang:scala-library:2.10.4'
 
-#### All libaraies available internally from:
-     http://cobaltdm.int.thomsonreuters.com:9001/nexus-webapps
+#### All libaraies available internally from: 
+http://cobaltdm.int.thomsonreuters.com:9001/nexus-webapps
 
 #### Sami-bams coming soon:
-     https://bams-sami.int.thomsonreuters.com
+https://bams-sami.int.thomsonreuters.com
 
 
-Application Logging Configuration (Example - step 3)
+#### Application Logging Configuration (Example - step 3)
+```javascript 
  <appender name="KafkaLog4jAppender" class="com.thomsonreuters.enterpriselogging.appender.log4j.EnterpriseKafkaLog4jAppender">  
        <param name="brokerList" value="kafka-bold-qed.int.thomsonreuters.com:9092" />
        <param name="requiredNumAcks" value="0" />
@@ -56,7 +57,7 @@ Application Logging Configuration (Example - step 3)
        <param name="headerNames" value="sp-timestamp,sp-eventSourceUUID,sp-eventType,sp-eventSeverity,sp-isAlarm" />
        <layout class="com.thomsonreuters.enterpriselogging.log4j.Log4jJsonEventLayout" />
   </appender>    
+```
 
-
-JVM Args (Example - step 4)
+#### JVM Args (Example - step 4)
 -Dsp-eventSourceUUID=4800a410-81f9-476e-9dd0-ce8fd71ccd2a -Dsoftware.module.registry.service.url="trams-logstash-eag-preprod.int.thomsonreuters.com:9200" -Denvironment=demo -DinstantiateRegistryUtil=true
