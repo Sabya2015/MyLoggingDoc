@@ -39,10 +39,10 @@ Image
     - compile 'org.scala-lang:scala-library:2.10.4'
 
 #### All libaraies available internally from:
-    - http://cobaltdm.int.thomsonreuters.com:9001/nexus-webapps
+     http://cobaltdm.int.thomsonreuters.com:9001/nexus-webapps
 
 #### Sami-bams coming soon:
-    - https://bams-sami.int.thomsonreuters.com
+     https://bams-sami.int.thomsonreuters.com
 
 
 Application Logging Configuration (Example - step 3)
