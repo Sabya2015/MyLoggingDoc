@@ -92,7 +92,7 @@ Alarm correlation: * For grouping alarms to episodes. *
 
 #### Alarm 1
 
-** Message **
+##### * Message *
 ```javascript
  {                    
   "sp-isAlarm": true,
@@ -121,4 +121,35 @@ correlation_signature =
 Result
 
 "correlation_id":"pre-productionHelloWorld-TR"
+```
+
+
+#### Alarm 2
+##### *Message*
+```javascript
+ {
+  "sp-isAlarm": true,
+  "sp-applicationUniqueID": "202564",
+  "sp-eventSourceUUID": "30044842-21c9-11e6-b67b-9e71128cae77",
+  "sp-timestamp": "2016-11-21T13:52:30.555Z",
+  "sp-eventSchemaVersion": 3,
+  "sp-softwareModuleName": "HelloWorldTRLoggingTest", 
+  "sp-message":"HelloWorld-TR",
+  "sp-eventSeverity": "warning",
+  "sp-eventContext": {  
+  "sp-environmentClass": "pre-production"
+  }
+}
+
+correlation_signature =
+1 ("HelloWorldTRLoggingTest" +
+2 "pre-production" +
+3  +
+4  +
+5  "HelloWorld-TR" )
+
+Result
+
+"correlation_id":
+"HelloWorldTRLoggingTestpre-productionHelloWorld-TR"
 ```
