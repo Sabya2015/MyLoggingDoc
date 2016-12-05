@@ -59,10 +59,6 @@ https://bams
   </appender>    
 ```
 
-#### JVM Args (Example - step 4)
--Dsp-eventSourceUUID=4800a410-81f9-476e-9dd0-ce8fd71ccd2a -Dsoftware.module.registry.service.url="trams-logstash-eag-preprod.int.thomsonreuters.com:9200" -Denvironment=demo -DinstantiateRegistryUtil=true
-
-
 #### SM Registry properties specified as VM argument
 -Dsp-eventSourceUUID=4800a410-81f9-476e-9dd0-ce8fd71ccd2a </br>
 -Dsoftware.module.registry.service.url="trams-logstash-eag-preprod.int.thomsonreuters.com:9200"  </br>
@@ -73,4 +69,24 @@ https://bams
 
 ---image 3
 [[https://github.com/Sabya2015/MyLoggingDoc/blob/master/img/event]]
+
+
+### Example - the resulting alarm
+image -3
+
+[Mandatory and optional fields] 
+[Mapping rules in place]
+
+Alarm correlation: * For grouping alarms to episodes. *
+- Group related alarms together: alarming episodes
+- Alarm Correlation Signature:
+
+correlation_signature 
+```javascript 
+1 (if provided) sp-softwareModuleName +
+2 sp-eventContext.sp-environmentClass +
+3 (if provided) sp-eventContext.sp-environmentLabel +
+4 (if provided) sp-eventContext.sp-hostingModuleID  +
+5 sp-message OR (if provided) sp-eventGroupID )
+```
 
