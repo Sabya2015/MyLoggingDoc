@@ -1,6 +1,6 @@
 # MyLoggingDoc
 
-Image
+Image 1
 
 ## How does it work?
 - Application sends TR Logging Schema based Alarming Event.
@@ -69,8 +69,8 @@ https://bams
 -Denvironment=demo -DinstantiateRegistryUtil=true
 -Denvironment=qed
 
----image
+---image 2
 
----image
+---image 3
 [[https://github.com/Sabya2015/MyLoggingDoc/blob/master/img/event]]
 
