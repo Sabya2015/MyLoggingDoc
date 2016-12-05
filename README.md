@@ -12,14 +12,14 @@ Image 2
 - Application sends TR Logging Schema based Alarming Event.
 - Alarming events: "sp-isAlarm": true -> translates event to alarms
 - Alarm should be available in TRAMS ELK .
-- Compass Event Collector [details](https://www.lucidchart.com/documents/edit/bc288850-67ec-4d22-b704-bfce333d6ef5/1?callback=close)
-- To implement TR- Logging refer [TR-Logging Project ](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/TR-Logging-Project)
-- For CAM details refer [TR-Alarm Management](https://thehub.thomsonreuters.com/docs/DOC-851597#jive_content_id_TRLogModel)
+- Compass Event Collector [details](k=close)
+- To implement TR- Logging refer [TR-Logging Project ](g-Project)
+- For CAM details refer [TR-Alarm Management](ogModel)
 
-## *TR Logging Extensions ([Example](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/java-TR-Logging-Project-example)) – HowTo Steps*
+## *TR Logging Extensions ([Example](oject-example)) – HowTo Steps*
 1. Register the application in the Software Module Registry
     * Pre-requisite: sp-applicationUniqueId – Asset Insight Unique ID
-    * More info : [Software Module Registration](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/SoftwareModuleRegistry/blob/master/README.md)
+    * More info : [Software Module Registration](ter/README.md)
 2. Include necessary internal TR Enterprise Logging and third-party libraries in the application build path
 3. Application logging configuration: set up TR Enterprise Logging Kafka  appender (e.g. EnterpriseKafkaLog4jAppender) and JSON event layout (e.g. Log4jJsonEventLayout)
 4. Add the necessary JVM parameters to the application’s startup or put required the properties in application code. 
@@ -45,7 +45,7 @@ Image 2
     - compile 'org.scala-lang:scala-library:2.10.4'
 
 #### All libaraies available internally from: 
-http://cobaltdm.int.thomsonreuters.com:9001/nexus-webapps
+http://coba
 
 
 #### Application Logging Configuration 
@@ -77,8 +77,8 @@ http://cobaltdm.int.thomsonreuters.com:9001/nexus-webapps
 ### Example - the resulting alarm
 image -4
 
-[Mandatory and optional fields](https://thehub.thomsonreuters.com/docs/DOC-851597) 
-[Mapping rules in place](https://thehub.thomsonreuters.com/docs/DOC-851597)
+[Mandatory and optional fields](https7) 
+[Mapping rules in place](http)
 
 Alarm correlation: * For grouping alarms to episodes. *
 - Group related alarms together: alarming episodes
@@ -168,14 +168,14 @@ image 5, image 6
 
 
 
-## Troubleshooting with Postman – [details](https://thehub.thomsonreuters.com/docs/DOC-851597)
+## Troubleshooting with Postman – [details](http97)
 -image 7
 -image 8
 
 #### Using Postman to verify CAM alarming event 
 
 POST </br>
-http://compass-alarm-dev-01.emea1.cis.trcloud:3001/alarm_api/v2/events 
+http:vents 
 
 
 Headers
@@ -220,12 +220,12 @@ To auto clear a previous warning/critical alarm, you must send an alarm with OK 
 #### To clear alarm manually:
 It does not have to be a manual process. However, the dashboard allows you to take ownership of an alarm and change severity to OK.
 
-[Clearing alarm details](https://thehub.thomsonreuters.com/docs/DOC-851597#jive_content_id_Clearing_alarms)</br>
+[Clearing alarm details](htlarms)</br>
 image -7
 
 
 #### *How to check Alarms after sending event from TR Logging Extensions*
-1) Go to [CAM dashboard](https://compass.thomsonreuters.com/monitor/alarms/)
+1) Go to [CAM dashboard](htrms/)
 
 image -8
 compasDashboard.png
@@ -251,13 +251,13 @@ img -12
 
 ### References
 
-[The Thomson Reuters Enterprise Logging Framework](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/TR-Logging-Project)</br>
-[CAM dashboard](https://compass.thomsonreuters.com/monitor/alarms/)</br>
-[CAM alarm from TRLogModel](https://thehub.thomsonreuters.com/docs/DOC-851597)</br>
-[Developers Guide](https://docs.google.com/document/d/1hMFmM-d0UzSC4ZgwUbQ8Gr6bdCsJClZU6pbSWUiDaR8/edit) </br>
+[The Thomson Reuters Enterprise Logging Framework](htProject)</br>
+[CAM dashboard](httrms/)</br>
+[CAM alarm from TRLogModel](http7)</br>
+[Developers Guide](httdit) </br>
 
 ##### TR Logging-Compass Monitor Integration </br>
-https://thehub.thomsonreuters.com/docs/DOC-1850624
+htt1850624
 
 ##### FAQs </br>
-https://thehub.thomsonreuters.com/docs/DOC-1079951
+http79951
