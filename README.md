@@ -81,7 +81,7 @@ Alarm correlation: * For grouping alarms to episodes. *
 - Group related alarms together: alarming episodes
 - Alarm Correlation Signature:
 
-correlation_signature 
+#### correlation_signature 
 ```javascript 
 1 (if provided) sp-softwareModuleName +
 2 sp-eventContext.sp-environmentClass +
@@ -90,3 +90,35 @@ correlation_signature
 5 sp-message OR (if provided) sp-eventGroupID )
 ```
 
+#### Alarm 1
+
+** Message **
+```javascript
+ {                    
+  "sp-isAlarm": true,
+  "sp-applicationUniqueID": "202564",
+  "sp-eventSourceUUID": "30044842-21c9-11e6-b67b-9e71128cae77",
+  "sp-timestamp": "2016-11-21T13:50:40.555Z",
+  "sp-eventSchemaVersion": 3,
+  "sp-message":"HelloWorld-TR",
+  "sp-eventSeverity": "warning",
+    "sp-eventContext": {  
+    "sp-environmentClass": "pre-production"
+  }
+}
+
+
+
+
+correlation_signature =
+1 ( +
+2 "pre-production" +
+3  +
+4  +
+5  "HelloWorld-TR" )
+ 
+
+Result
+
+"correlation_id":"pre-productionHelloWorld-TR"
+```
