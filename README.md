@@ -72,7 +72,7 @@ https://bams
 
 
 ### Example - the resulting alarm
-image -3
+image -4
 
 [Mandatory and optional fields] 
 [Mapping rules in place]
@@ -153,3 +153,42 @@ Result
 "correlation_id":
 "HelloWorldTRLoggingTestpre-productionHelloWorld-TR"
 ```
+image 5, image 6
+
+
+
+
+
+
+
+
+
+
+## Troubleshooting with Postman – [details]()
+-image 7
+-image 8
+
+#### Using Postman to verify CAM alarming event 
+POST
+http://compass-
+Headers
+ - Content-Type application/json
+Body
+ - Raw
+ - Example on screenshot:
+ ```javascript
+{                                                      
+  "sp-isAlarm": true,
+  "sp-applicationUniqueID": "202564",
+  "sp-eventSourceUUID": "30044842-21c9-11e6-b67b-9e71128cae77",
+  "sp-timestamp": "2016-10-26T13:53:30.555Z",
+  "sp-eventSchemaVersion": 3,
+  "sp-softwareModuleName": "HelloWorldTRLoggingTest", 
+  "sp-message":"HelloWorld-TR",
+  "sp-eventSeverity": "warning",
+  "sp-eventContext": {  
+    "sp-environmentClass": "pre-production",
+    "sp-eventSourceHostname": "c123abc.int.thomsonreuters.com"
+  }
+}
+ ```
