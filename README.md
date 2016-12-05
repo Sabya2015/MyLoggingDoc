@@ -64,10 +64,10 @@ https://bams
 
 
 #### SM Registry properties specified as VM argument
--Dsp-eventSourceUUID=4800a410-81f9-476e-9dd0-ce8fd71ccd2a 
--Dsoftware.module.registry.service.url="trams-logstash-eag-preprod.int.thomsonreuters.com:9200" 
--Denvironment=demo -DinstantiateRegistryUtil=true
--Denvironment=qed
+-Dsp-eventSourceUUID=4800a410-81f9-476e-9dd0-ce8fd71ccd2a </br>
+-Dsoftware.module.registry.service.url="trams-logstash-eag-preprod.int.thomsonreuters.com:9200"  </br>
+-Denvironment=demo -DinstantiateRegistryUtil=true</br>
+-Denvironment=qed </br>
 
 ---image 2
 
