@@ -220,7 +220,7 @@ To auto clear a previous warning/critical alarm, you must send an alarm with OK 
 #### To clear alarm manually:
 It does not have to be a manual process. However, the dashboard allows you to take ownership of an alarm and change severity to OK.
 
-[Clearing alarm details](https://thehub.thomsonreuters.com/docs/DOC-851597#jive_content_id_Clearing_alarms)
+[Clearing alarm details](https://thehub.thomsonreuters.com/docs/DOC-851597#jive_content_id_Clearing_alarms)</br>
 image -7
 
 
@@ -251,10 +251,10 @@ img -12
 
 ### References
 
-[The Thomson Reuters Enterprise Logging Framework](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/TR-Logging-Project)
-[CAM dashboard](https://compass.thomsonreuters.com/monitor/alarms/)
-[CAM alarm from TRLogModel](https://thehub.thomsonreuters.com/docs/DOC-851597)
-[Developers Guide](https://docs.google.com/document/d/1hMFmM-d0UzSC4ZgwUbQ8Gr6bdCsJClZU6pbSWUiDaR8/edit) 
+[The Thomson Reuters Enterprise Logging Framework](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/TR-Logging-Project)</br>
+[CAM dashboard](https://compass.thomsonreuters.com/monitor/alarms/)</br>
+[CAM alarm from TRLogModel](https://thehub.thomsonreuters.com/docs/DOC-851597)</br>
+[Developers Guide](https://docs.google.com/document/d/1hMFmM-d0UzSC4ZgwUbQ8Gr6bdCsJClZU6pbSWUiDaR8/edit) </br>
 
 ##### TR Logging-Compass Monitor Integration </br>
 https://thehub.thomsonreuters.com/docs/DOC-1850624
