@@ -13,7 +13,7 @@ Image 2
 - Alarming events: "sp-isAlarm": true -> translates event to alarms
 - Alarm should be available in TRAMS ELK .
 - Compass Event Collector [details](https://www.lucidchart.com/documents/edit/bc288850-67ec-4d22-b704-bfce333d6ef5/1?callback=close)
-- To implement TR- Logging refer [TR-Logging Project](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/TR-Logging-Project)
+- To implement TR- Logging refer [TR-Logging Project ](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/TR-Logging-Project)
 - For CAM details refer [TR-Alarm Management](https://thehub.thomsonreuters.com/docs/DOC-851597#jive_content_id_TRLogModel)
 
 ## *TR Logging Extensions ([Example](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/java-TR-Logging-Project-example)) – HowTo Steps*
