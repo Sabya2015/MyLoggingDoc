@@ -169,13 +169,17 @@ image 5, image 6
 -image 8
 
 #### Using Postman to verify CAM alarming event 
-POST
+
+POST </br>
 http://compass-
+
 Headers
  - Content-Type application/json
+
 Body
  - Raw
- - Example on screenshot:
+
+##### *Example on screenshot:*
  ```javascript
 {                                                      
   "sp-isAlarm": true,
