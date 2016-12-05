@@ -5,20 +5,20 @@ Image
 ## How does it work?
 - Application sends TR Logging Schema based Alarming Event.
 - Alarming events: "sp-isAlarm": true -> translates event to alarms
-- Alarm should be available in TRAMS ELK – troubleshooting tip.
-- Dealing with non-standard event fields, incomplete alarming events – both ignored
-- Compass Event Collector details 
+- Alarm should be available in TRAMS ELK .
+- Compass Event Collector [details ](https://www.lucidchart.com/documents/edit/bc288850-67ec-4d22-b704-bfce333d6ef5/1?callback=close)
+- To implement TR- Logging refer [TR-Logging Project](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/java-TR-Logging-Project-example)
+- For CAM details refer [TR-Alarm Management](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/TR-Logging-Project/edit/master/TR-Alarm-Management-Service.md)
 
-
-## *TR Logging Extensions (Example) – HowTo Steps*
+## *TR Logging Extensions ([Example]((https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/java-TR-Logging-Project-example))) – HowTo Steps*
 1. Register the application in the Software Module Registry
     * Pre-requisite: sp-applicationUniqueId – Asset Insight Unique ID
-    * More info : Software Module Registration
+    * More info : [Software Module Registration](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/SoftwareModuleRegistry/blob/master/README.md)
 2. Include necessary internal TR Enterprise Logging and third-party libraries in the application build path
 3. Application logging configuration: set up TR Enterprise Logging Kafka  appender (e.g. EnterpriseKafkaLog4jAppender) and JSON event layout (e.g. Log4jJsonEventLayout)
-4. Add the necessary JVM parameters to the application’s startup 
-5. Add logging logic to application code
-6. Log events will show up in Kibana dashboard, Alarm events will show up in CAM
+4. Add the necessary JVM parameters to the application’s startup or put required the properties in application code. 
+5. Add logging logic to application code 
+6. Log events will show up in Kibana dashboard, Alarm events will show up in CAM.[CAM Dashboard]
 
 
 
@@ -61,3 +61,14 @@ https://bams
 
 #### JVM Args (Example - step 4)
 -Dsp-eventSourceUUID=4800a410-81f9-476e-9dd0-ce8fd71ccd2a -Dsoftware.module.registry.service.url="trams-logstash-eag-preprod.int.thomsonreuters.com:9200" -Denvironment=demo -DinstantiateRegistryUtil=true
+
+
+#### SM Registry properties specified as VM argument
+-Dsp-eventSourceUUID=4800a410-81f9-476e-9dd0-ce8fd71ccd2a 
+-Dsoftware.module.registry.service.url="trams-logstash-eag-preprod.int.thomsonreuters.com:9200" 
+-Denvironment=demo -DinstantiateRegistryUtil=true
+-Denvironment=qed
+
+---image
+
+---image
