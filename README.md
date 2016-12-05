@@ -1,19 +1,25 @@
-# MyLoggingDoc
+# CAM alerting using TR- Logging
 
+### This document gives a brief about how to raise and manage alarms pusblishing to the TR-Logging ingest topics
+
+CAM dashboard alarms from TR Logging Schema compatible events.
+Alarming events: "sp-isAlarm": true,
+Turns alarming event json into an alarming episode:
 Image 1
 
 ## How does it work?
+Image 2
 - Application sends TR Logging Schema based Alarming Event.
 - Alarming events: "sp-isAlarm": true -> translates event to alarms
 - Alarm should be available in TRAMS ELK .
-- Compass Event Collector [details]()
-- To implement TR- Logging refer [TR-Logging Project]()
-- For CAM details refer [TR-Alarm Management]()
+- Compass Event Collector [details](https://www.lucidchart.com/documents/edit/bc288850-67ec-4d22-b704-bfce333d6ef5/1?callback=close)
+- To implement TR- Logging refer [TR-Logging Project](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/TR-Logging-Project)
+- For CAM details refer [TR-Alarm Management](https://thehub.thomsonreuters.com/docs/DOC-851597#jive_content_id_TRLogModel)
 
-## *TR Logging Extensions ([Example]()) – HowTo Steps*
+## *TR Logging Extensions ([Example](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/java-TR-Logging-Project-example)) – HowTo Steps*
 1. Register the application in the Software Module Registry
     * Pre-requisite: sp-applicationUniqueId – Asset Insight Unique ID
-    * More info : [Software Module Registration]()
+    * More info : [Software Module Registration](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/SoftwareModuleRegistry/blob/master/README.md)
 2. Include necessary internal TR Enterprise Logging and third-party libraries in the application build path
 3. Application logging configuration: set up TR Enterprise Logging Kafka  appender (e.g. EnterpriseKafkaLog4jAppender) and JSON event layout (e.g. Log4jJsonEventLayout)
 4. Add the necessary JVM parameters to the application’s startup or put required the properties in application code. 
@@ -22,7 +28,7 @@ Image 1
 
 
 
-#### Include internal TR Enterprise Logging and third-party libraries in the application build (Example - step 2)
+#### Include internal TR Enterprise Logging and third-party libraries in the application build 
 
 ### *Dependencies (Gradle Format)*
 
@@ -39,13 +45,10 @@ Image 1
     - compile 'org.scala-lang:scala-library:2.10.4'
 
 #### All libaraies available internally from: 
-http://cobaltdm
-
-#### Sami-bams coming soon:
-https://bams
+http://cobaltdm.int.thomsonreuters.com:9001/nexus-webapps
 
 
-#### Application Logging Configuration (Example - step 3)
+#### Application Logging Configuration 
 ```javascript 
  <appender name="KafkaLog4jAppender" class="com.thomsonreuters.enterpriselogging.appender.log4j.EnterpriseKafkaLog4jAppender">  
        <param name="brokerList" value="kafka-bold-qed.int.thomsonreuters.com:9092" />
@@ -74,14 +77,15 @@ https://bams
 ### Example - the resulting alarm
 image -4
 
-[Mandatory and optional fields] 
-[Mapping rules in place]
+[Mandatory and optional fields](https://thehub.thomsonreuters.com/docs/DOC-851597) 
+[Mapping rules in place](https://thehub.thomsonreuters.com/docs/DOC-851597)
 
 Alarm correlation: * For grouping alarms to episodes. *
 - Group related alarms together: alarming episodes
 - Alarm Correlation Signature:
 
 #### correlation_signature 
+Correlation id which identifies an episode as a unique entity
 ```javascript 
 1 (if provided) sp-softwareModuleName +
 2 sp-eventContext.sp-environmentClass +
@@ -164,14 +168,15 @@ image 5, image 6
 
 
 
-## Troubleshooting with Postman – [details]()
+## Troubleshooting with Postman – [details](https://thehub.thomsonreuters.com/docs/DOC-851597)
 -image 7
 -image 8
 
 #### Using Postman to verify CAM alarming event 
 
 POST </br>
-http://compass-
+http://compass-alarm-dev-01.emea1.cis.trcloud:3001/alarm_api/v2/events 
+
 
 Headers
  - Content-Type application/json
@@ -196,3 +201,63 @@ Body
   }
 }
  ```
+
+### *Clearing alarms*
+
+- You can auto-clear alarms via application logging
+- You can manually clear alarms from Dashboard
+- Alarms are archived (disappearing from live dashboard)
+  - Critical 4 days after last update
+  - Warning 2 days after last update
+  - OK 1day after last update
+- Archived alarms are kept 6 months
+- You can access archived alarms from Reporting tool
+
+
+#### Auto CLear
+To auto clear a previous warning/critical alarm, you must send an alarm with OK severity and same correlation id ( as critical/warning) driven from a number of fields as described in Correlation id.
+
+#### To clear alarm manually:
+It does not have to be a manual process. However, the dashboard allows you to take ownership of an alarm and change severity to OK.
+
+[Clearing alarm details](https://thehub.thomsonreuters.com/docs/DOC-851597#jive_content_id_Clearing_alarms)
+image -7
+
+
+#### *How to check Alarms after sending event from TR Logging Extensions*
+1) Go to [CAM dashboard](https://compass.thomsonreuters.com/monitor/alarms/)
+
+image -8
+compasDashboard.png
+
+2) Click on the Show Filters img at top left corner
+3) Click on Default tab and clear all the filters for default
+
+image -9
+compasClearFilter.png
+4) Click on Application tab and type in your application name and enter.
+Hover on + symbol of SSDF and click on the event type(critical in this case)
+img -10
+
+5) Will get the application and count of events based on level.
+Click on the aplication 
+img -11
+6) GIves further details about the perticular event with details .
+img -12
+
+
+
+
+
+### References
+
+[The Thomson Reuters Enterprise Logging Framework](https://git.sami.int.thomsonreuters.com/TR-Enterprise-Logging/TR-Logging-Project)
+[CAM dashboard](https://compass.thomsonreuters.com/monitor/alarms/)
+[CAM alarm from TRLogModel](https://thehub.thomsonreuters.com/docs/DOC-851597)
+[Developers Guide](https://docs.google.com/document/d/1hMFmM-d0UzSC4ZgwUbQ8Gr6bdCsJClZU6pbSWUiDaR8/edit) 
+
+##### TR Logging-Compass Monitor Integration </br>
+https://thehub.thomsonreuters.com/docs/DOC-1850624
+
+##### FAQs </br>
+https://thehub.thomsonreuters.com/docs/DOC-1079951
