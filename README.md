@@ -16,7 +16,7 @@ Image 2
 - To implement TR- Logging refer [TR-Logging Project ](g-Project)
 - For CAM details refer [TR-Alarm Management](ogModel)
 
-## *TR Logging Extensions ([Example](oject-example)) – HowTo Steps*
+## *TR Logging Extensions ([Example](oject-example))*
 1. Register the application in the Software Module Registry
     * Pre-requisite: sp-applicationUniqueId – Asset Insight Unique ID
     * More info : [Software Module Registration](ter/README.md)
